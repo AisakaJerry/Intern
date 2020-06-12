@@ -1,6 +1,6 @@
-You need develop a nodejs project that achieve the following feature:
+A nodejs project that achieve the following feature:
 
-The project should provide the following API.
+The project provides the following API.
 
 If you have any question, please contact me. 
 
@@ -16,10 +16,10 @@ Q and A system
    Response：
    {
       "type": "1 or 2 or 3",
-      # The value could be 1，2，3。 
+      # The value would be 1, 2 or 3 
       # 1:Find the right answer，rate>0.92
-     	#	2: not sure，rate>0.5
-     	# 3: The sentense doesn't make any sense
+      # 2: not sure，rate>0.5
+      # 3: The sentense doesn't make any sense
       "question1":"question1",
       "question2":"question2",
       "question3":"question3",
