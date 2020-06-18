@@ -8,7 +8,7 @@ process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0'  // SET SSL certificate verificat
 
 const question_list = [
   "Why does Little Red Riding Hood visit her grandmother?",
-  "Why does Little Red Riding Hood's mother give Little Red Riding Hood a basket of treats?",
+  "Why does Little  Red Riding Hood's mother give Little Red Riding Hood a basket of treats?",
   "Why does Little Red Riding Hood's mother tell Little Red Riding Hood not to talk to strangers?",
   "Whom does Little Red Riding Hood meet in the forest?",
   "What does the wolf ask Little Red Riding Hood?",
@@ -91,7 +91,7 @@ app.post('/ask_question/p1', function(req, res) {
     "answer3":    "answer3"
   }
   console.log(params)
-  postData(url, {"s1": params, "s2": answer_list2})
+  postData(url, {"s1": params, "s2": question_list})
     .then(function(data){
       var newList = []
       for (var i = 0; i < 14; i++) {
@@ -117,6 +117,7 @@ app.post('/ask_question/p1', function(req, res) {
       QAResponseClass.answer1 = answer_list2[newList[0][1]-1]
       QAResponseClass.answer2 = answer_list2[newList[1][1]-1]
       QAResponseClass.answer3 = answer_list2[newList[2][1]-1]
+      console.log(QAResponseClass)
       res.json(QAResponseClass)
     })
     .catch(error => console.error(error))
