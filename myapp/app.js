@@ -1,9 +1,9 @@
-const express = require('express')
-const request = require('request')
-const fetch = require('node-fetch')
+import express from 'express'
+import request from 'request'
+import fetch from 'node-fetch'
 const app = express()
 const port = 8080
-var bodyParser = require('body-parser')
+import { json, urlencoded } from 'body-parser'
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0'  // SET SSL certificate verification to FALSE
 
 const question_list = [
@@ -47,8 +47,8 @@ var defaultData = {
 }
 
 require('https').globalAgent.options.ca = require('ssl-root-cas/latest').create();
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({extended:false}))
+app.use(json())
+app.use(urlencoded({extended:false}))
 
 /*
 postData(url, defaultData)
